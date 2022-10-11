@@ -1,8 +1,8 @@
 // Connects the client
 require('dotenv').config();
 const mysql = require('mysql2');
-const db_user = process.env.DB_USER;
-const db_pass = process.env.DB_PASS;
+const db_user = process.env.DB_USERNAME;
+const db_pass = process.env.DB_PASSWORD;
 
 // Connects to database
 const connection = mysql.createConnection(
