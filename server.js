@@ -2,6 +2,7 @@ const inquirer =  require("inquirer");
 const db = require("./db");
 require("console.table");
 
+// Initial prompt with different employee options
 const employeeMenu = async () => {
   const answer = await inquirer.prompt([
     {
@@ -24,7 +25,7 @@ const employeeMenu = async () => {
   answer.options();
 };
 
-
+// Views all departments
 function viewDepartments() {
   db.findAllDepartments().then(([rows]) => {
     console.table(rows);
@@ -32,7 +33,7 @@ function viewDepartments() {
   });
 }
 
-
+// Views all employees
 function viewEmployees() {
   db.findAllEmployees().then(([rows]) => {
     console.table(rows);
@@ -40,7 +41,7 @@ function viewEmployees() {
   });
 }
 
-
+// Views all roles
 function viewRoles() {
   db.findAllRoles().then(([rows]) => {
     console.table(rows);
@@ -48,7 +49,7 @@ function viewRoles() {
   });
 }
 
-
+// Adds new department to table
 const addDepartment = async () => {
   const answer = await inquirer.prompt([
     {
@@ -71,7 +72,7 @@ function mapEmployeeOptions({ id, name }) {
   return { name, value: id };
 }
 
-
+// Adds new employee to table
 const addEmployee = async () => {
   const [rows1] = await db.findAllRoles();
   console.table(rows1);
@@ -128,7 +129,7 @@ const addEmployee = async () => {
   });
 };
 
-
+// Adds new role to table
 const addRole = async () => {
 
   const [rows] = await db.findAllDepartments();
@@ -162,7 +163,7 @@ const addRole = async () => {
   });
 };
 
-
+// Updates existing role in table
 const updateRole = async () => {
   const [rows1] = await db.findAllRoles();
   console.table(rows1);
@@ -198,6 +199,7 @@ const updateRole = async () => {
   });
 };
 
+// Exits out of the employee menu
 const exitMenu = () => {
   console.log("You have exited the menu!");
   process.exit(0);
