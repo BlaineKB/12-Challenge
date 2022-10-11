@@ -3,7 +3,7 @@ const db = require("./db");
 require("console.table");
 
 const employeeMenu = async () => {
-  const answer = inquirer.prompt([
+  const answer = await inquirer.prompt([
     {
       name: 'options',
       type: 'list',
