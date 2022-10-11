@@ -17,7 +17,7 @@ VALUES
 ("Account Lead", 100000, 3),
 ("Accountant", 80000, 3);
 
-INSERT INTO employee(first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
 
 VALUES
 ("Billy", "Brown", 1, NULL),
