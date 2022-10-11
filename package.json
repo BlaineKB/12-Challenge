@@ -20,7 +20,6 @@
   "homepage": "https://github.com/BlaineKB/12-Challenge-Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "dotenv": "^16.0.3",
     "g": "^2.0.1",
     "inquirer": "^8.2.4",
     "mysql2": "^2.3.3",

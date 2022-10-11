@@ -123,7 +123,7 @@ const addEmployee = async () => {
   db.addAnEmployee(answer).then(() => {
     db.findAllEmployees().then(([rows]) => {
       console.table(rows);
-      return EmployeeMenu();
+      return employeeMenu();
     });
   });
 };
@@ -133,7 +133,7 @@ const addRole = async () => {
 
   const [rows] = await db.findAllDepartments();
   console.table(rows);
-  const departmentChoices = rows.map(({ dept_name, id }) => ({ name: dept_name, value: id }));
+  const departmentChoices = rows.map(({ department_name, id }) => ({ name: department_name, value: id }));
 
   const answer = await inquirer.prompt([
     {
@@ -157,7 +157,7 @@ const addRole = async () => {
   db.addNewRole(answer.name, answer.salary, answer.department).then(() => {
     db.findAllRoles().then(([rows]) => {
       console.table(rows);
-      return mainMenu();
+      return employeeMenu();
     });
   });
 };
