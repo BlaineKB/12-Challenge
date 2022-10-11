@@ -1,4 +1,4 @@
-# 12-Challenge
+# 12-Challenge-Employee-Tracker
 
 ## Description
 An application for a user to keep track of employees. This was constructed using MySQL, Node.js, and Inquirer.
